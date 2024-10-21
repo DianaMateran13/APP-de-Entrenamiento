@@ -7,7 +7,7 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // o cualquier otro número de puerto
 // Servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
@@ -42,6 +42,36 @@ app.post('/generate-routine', async (req, res) => {
     catch (error) {
         console.error('Error al generar la rutina:', error);
         res.status(500).json({ error: 'Error al generar la rutina' });
+    }
+});
+// Nueva ruta para manejar las preguntas del chat
+app.post('/ask-question', async (req, res) => {
+    try {
+        const { question } = req.body;
+        const response = await axios.post(GROQ_API_URL, {
+            model: "mixtral-8x7b-32768",
+            messages: [
+                {
+                    role: "system",
+                    content: "Eres un asistente de entrenamiento experto. Responde preguntas sobre ejercicios, nutrición y salud."
+                },
+                {
+                    role: "user",
+                    content: question
+                }
+            ]
+        }, {
+            headers: {
+                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        });
+        const answer = response.data.choices[0].message.content;
+        res.json({ answer });
+    }
+    catch (error) {
+        console.error('Error al procesar la pregunta:', error);
+        res.status(500).json({ error: 'Error al procesar la pregunta' });
     }
 });
 app.listen(port, () => {

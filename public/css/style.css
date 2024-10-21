@@ -1,16 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-image: url('/images/energyFit.jpg');
     background-color: rgb(89, 139, 123);
-    background-size: 80% 100%;  /* Ajusta la imagen al 100% del ancho y alto */
+    background-size: 80% 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #333;
-    min-height: 100vh;  /* Asegura que el body ocupe al menos toda la altura de la ventana */
+    min-height: 100vh;
 }
 
 .container {
@@ -24,9 +24,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #333;
+h1, h2 {
+    color: rgb(7, 7, 7);
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .input-section {
@@ -48,18 +49,49 @@ select, button {
 }
 
 button {
-    background: #333;
+    background: rgb(89, 139, 123);
     color: #fff;
     border: none;
     cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button:hover {
-    background: #555;
+    background: rgba(89, 139, 123, 0.8);
 }
 
 .resultado {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
+}
+
+/* Estilos para la sección de chat */
+.chat-section {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#send-question {
+    padding: 10px 20px;
 }
