@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/energyFit.jpg');
+    background-color: rgb(89, 139, 123);
+    background-size: 80% 100%;  /* Ajusta la imagen al 100% del ancho y alto */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #333;
+    min-height: 100vh;  /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+.container {
+    width: 50%;
+    margin: 20px auto;
+    overflow: hidden;
+    padding: 20px;
+    position: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.input-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+.resultado {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
